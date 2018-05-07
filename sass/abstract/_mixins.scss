@@ -1,0 +1,25 @@
+//GRID MIXINS
+@mixin grid-width-1($num-of-col) {
+    width: calc((100% - #{$grid-gutter-width} * #{$num-of-col - 1}) / #{$num-of-col});
+}
+
+@mixin grid-width-2($num-of-col, $span){
+    width: calc(#{$span} * calc((100% - #{$grid-gutter-width} * #{$num-of-col - 1}) / #{$num-of-col}) 
+    + (#{$span} - 1) * #{$grid-gutter-width});
+}
+
+@mixin offset-1($num-of-col) {
+    margin-left: calc(calc((100% - #{$grid-gutter-width} * #{$num-of-col - 1}) / #{$num-of-col}) + #{$grid-gutter-width});
+}
+
+@mixin offset-2($num-of-col, $span) {
+    margin-left: calc(calc(#{$span} * calc((100% - #{$grid-gutter-width} * #{$num-of-col - 1}) / #{$num-of-col}) 
+    + (#{$span} - 1) * #{$grid-gutter-width}) + #{$grid-gutter-width});
+}
+
+// MEDIA-QUERY
+@mixin media-query($device) {
+    @if $device == phone {
+        @media (max-width: 37.5em) {@content};
+    }
+}

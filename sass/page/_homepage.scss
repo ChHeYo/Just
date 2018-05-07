@@ -1,0 +1,28 @@
+.section-grid {
+    text-align: center;
+    color: $color-black;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+
+    & > .container {
+        margin-bottom: 1rem;
+        
+        @include media-query(phone){
+            margin-bottom: 0;
+        }
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+        animation: appear 2s ease-out;
+    }
+
+    &__paragraph {
+        font-size: 1.4rem;
+    }
+
+    & div[class^="col-"] {
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
+}

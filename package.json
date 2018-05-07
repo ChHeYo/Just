@@ -1,0 +1,22 @@
+{
+  "name": "just-css",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "keywords": [
+    "just",
+    "sass",
+    "scss",
+    "css",
+    "boilerplate",
+    "framework"
+  ],
+  "author": "Cheul Hee <cheulheeyoo@gmail.com> (Jason)",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
