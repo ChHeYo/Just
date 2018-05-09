@@ -1,11 +1,76 @@
+.section-main {
+    min-height: 60vh;
+    position: relative;
+
+    &__links {
+        padding: .5rem 1rem;
+    
+        &-github:link,
+        &-github:visited {
+            font-size: $font-size-h1;
+            color: $color-black;
+        }
+    
+        &-appear {
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s;
+        }
+    
+        &:hover &-appear {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__heading{
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__title {
+        font-size: $font-size-h1;
+        color: $color-black;
+        font-weight: 300;
+
+        &-fewer {
+            display: inline-block;
+            animation: fromLeft 1.5s ease-out;
+        }
+
+        &-greater {
+            display: inline-block;
+            animation: fromRight 1.5s ease-out;
+        }
+    }
+
+    &__intro {
+        font-size: 1.3rem;
+        display: block;
+        line-height: $default-line-height;
+    }
+}
+
+.section-intro {
+    text-align: center;
+    font-size: $font-size-p;
+    padding: 10rem 0;
+    background-color: $color-light-grey;
+}
+
+
 .section-grid {
     text-align: center;
     color: $color-black;
-    font-size: 1.3rem;
-    margin-top: 2rem;
+    padding: 10rem 0;
+    font-size: 1.2rem;
 
     & > .container {
         margin-bottom: 1rem;
+        line-height: $default-line-height;
         
         @include media-query(phone){
             margin-bottom: 0;
@@ -13,12 +78,15 @@
     }
 
     &__heading {
-        font-size: 2.5rem;
+        font-size: $font-size-h2;
+        margin-bottom: 1rem;
+        font-weight: 400;
         animation: appear 2s ease-out;
     }
 
     &__paragraph {
-        font-size: 1.4rem;
+        font-size: $font-size-p;
+        margin-bottom: 6rem;
     }
 
     & div[class^="col-"] {
