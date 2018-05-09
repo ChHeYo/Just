@@ -1,1 +1,1 @@
-# [Just] (http://cheulheeyoo.com/just/index.html)
+# [Just](http://cheulheeyoo.com/just/index.html)
