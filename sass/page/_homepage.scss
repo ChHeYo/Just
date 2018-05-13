@@ -57,40 +57,53 @@
 .section-intro {
     text-align: center;
     font-size: $font-size-p;
-    padding: 10rem 0;
+    padding: $default-section-paddings;
     background-color: $color-light-grey;
 }
 
 
 .section-grid {
     text-align: center;
-    color: $color-black;
-    padding: 10rem 0;
+    padding: $default-section-paddings;
     font-size: 1.2rem;
 
     & > .container {
         margin-bottom: 1rem;
         line-height: $default-line-height;
+
+        & .row {
+            background-color: $color-white;
+        }
         
         @include media-query(phone){
             margin-bottom: 0;
         }
     }
 
-    &__heading {
-        font-size: $font-size-h2;
-        margin-bottom: 1rem;
-        font-weight: 400;
-        animation: appear 2s ease-out;
-    }
-
     &__paragraph {
         font-size: $font-size-p;
-        margin-bottom: 6rem;
+        margin-bottom: 3rem;
     }
 
     & div[class^="col-"] {
         border-radius: 3px;
         text-transform: uppercase;
+        background-color: $color-grey;
+    }
+}
+
+.section-input {
+    padding: $default-section-paddings;
+    background-color: $color-light-grey;
+    text-align: center;
+    line-height: $default-line-height;
+
+    & .row {
+        display: flex;
+        align-items: center;
+
+        @include media-query(phone){
+            display: block;
+        }
     }
 }

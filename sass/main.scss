@@ -1,11 +1,16 @@
 // IMPORTING BASE
 @import "base/base";
+@import "base/utilities";
 
 // IMPORTING ABSTRACT
 @import "abstract/variables";
 @import "abstract/functions";
 @import "abstract/mixins";
 @import "abstract/animation";
+
+// COMPONENTS
+@import "components/forms";
+@import "components/headings";
 
 // HOMEPAGE
 @import "page/homepage";
