@@ -1,0 +1,23 @@
+input[class^="standard-sm"] {
+    @include input(100%, (1rem .75rem));
+}
+
+input[class^="standard-md"] {
+    @include input(100%, (1.5rem 1.125rem));
+}
+
+input[class^="standard-lg"] {
+    @include input(100%, (2rem 1.5rem));
+}
+
+.standard-sm--check,
+.standard-md--check,
+.standard-lg--check {
+    @include input_check;
+}
+
+.standard-sm--grow,
+.standard-md--grow,
+.standard-lg--grow {
+    @include input_grow;
+}

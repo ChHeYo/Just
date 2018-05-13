@@ -9,30 +9,20 @@
 }
 
 .row {
-    background-color: #fff;
 
-    div[class^="col-"] {
-        background-color: $color-grey;
+    & div[class^="col-"] {
         float: left;
         // SO THAT WHEN GRIDS COLLAP THERE WOULD BE SPACE BETWEEN THEM
         margin-bottom: $grid-gutter-height;
 
+        // NESTED COLS DO NOT GET BOTTOM MARGIN SO THAT THERE WON'T BE A AGGRAGATED GAP
+        & .row div[class^="col-"] {
+            margin-bottom: 0; // FOR LG SCREEN SIZE
+        }
+
+        // WE NEED GAPS BETWEEN COLS WITHIN NESTED ROW
         &:not(:last-of-type) {
             margin-right: $grid-gutter-width;
-        }
-    
-        @include media-query(phone){
-            width: 100% !important;
-        }
-    }
-
-    &:last-child div[class^="col-"] {
-        margin-bottom: 0;
-    
-        @include media-query(phone){
-            &:nth-last-child(2){
-                margin-bottom: $grid-gutter-height;
-            }
         }
     }
 
@@ -63,49 +53,38 @@
 
     & .col-offset-1-2 {
         @include offset-1(2);
-
-        @include media-query(phone){
-            margin-left: 0;
-        }
     }
 
     & .col-offset-1-3 {
         @include offset-1(3);
-
-        @include media-query(phone){
-            margin-left: 0;
-        }
     }
 
     & .col-offset-2-3 {
         @include offset-2(3, 2);
-
-        @include media-query(phone){
-            margin-left: 0;
-        }
     }
     
     & .col-offset-1-4 {
         @include offset-1(4);
-        
-        @include media-query(phone){
-            margin-left: 0;
-        }
     }
 
     & .col-offset-2-4 {
         @include offset-2(4, 2);
-
-        @include media-query(phone){
-            margin-left: 0;
-        }
     }
 
     & .col-offset-3-4 {
-        @include offset-2(4, 3  );
+        @include offset-2(4, 3);
+    }
+}
 
-        @include media-query(phone){
-            margin-left: 0;
+.row-block {
+
+    @include media-query(phone){
+        & div[class^="col-"] {
+            width: 100% !important;
+        }
+
+        & div[class^="col-offset-"] {
+            margin-left: 0 !important;
         }
     }
 }

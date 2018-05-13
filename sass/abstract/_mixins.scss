@@ -17,6 +17,34 @@
     + (#{$span} - 1) * #{$grid-gutter-width}) + #{$grid-gutter-width});
 }
 
+// FORM
+@mixin input($width, $padding) {
+    width: $width;
+    padding: $padding;
+    font-size: $font-size-input;
+    color: $color-black;
+    font-family: inherit;
+    border: 1px solid $color-grey;
+    border-radius: 3px;
+    transition: all .2s;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin input_check {
+    &:focus {
+        border-bottom: 1px solid $color-input--check;
+    }
+}
+
+@mixin input_grow {
+    &:focus {
+        transform: scale(1.03);
+    }
+}
+
 // MEDIA-QUERY
 @mixin media-query($device) {
     @if $device == phone {
